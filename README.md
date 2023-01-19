@@ -6,6 +6,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm i redux react-redux`
+
+To install redux.
+
+### `npm i uuid`
+
+To create random ID.
+
 ### `npm start`
 
 Runs the app in the development mode.\
