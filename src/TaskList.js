@@ -11,8 +11,10 @@ const TaskList = (props) => {
         <div>
             <CreateTask/>
             <ul style={{listStyleType: 'none'}}>
-                {tasks.map(task => <Task
+                {tasks.map((task, index )=> <Task
                     task={task}
+                    key={task.id}
+                    index={index}
                 />)}
             </ul>
         </div>

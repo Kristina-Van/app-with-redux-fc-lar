@@ -43,6 +43,20 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 todoList: newList,
             }
+        case 'CHECK_IS_DONE':
+            const checkTask = state.todoList.map(el => el.id === action.payload ? {...el, isDone: !el.isDone} : el);
+            return {
+                ...state, todoList: checkTask
+            }
+        case 'MOVE_TASK':
+            const currentIndex = state.todoList.indexOf(state.todoList.find(el => el.id === action.payload.id));
+            const currentTodoList = [...state.todoList];
+            const value = action.payload.direction === 'up' ? -1 : 1;
+            [currentTodoList[currentIndex], currentTodoList[currentIndex + value]] = [currentTodoList[currentIndex + value], currentTodoList[currentIndex]]
+        return {
+                ...state, todoList: currentTodoList
+        }
+
         default:
             return state;
     }

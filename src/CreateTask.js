@@ -15,7 +15,7 @@ const CreateTask = (props) => {
             <input
                 type="text"
                 value={input}
-                placeholder="Input new task name"
+                placeholder="Add new task name"
                 onChange={(e) => setInput(e.target.value)}/>
             <button onClick={createButtonHandler}>Create Task</button>
         </div>
